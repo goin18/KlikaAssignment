@@ -23,13 +23,13 @@
     <favorites_list name="Klika" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="vertical" split-proportion="0.46455938">
+    <splitter split-orientation="vertical" split-proportion="0.46168584">
       <split-first>
         <leaf>
           <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/index.html">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="0.4513889" vertical-offset="1110" max-vertical-offset="2385">
+                <state vertical-scroll-proportion="0.7009346" vertical-offset="1005" max-vertical-offset="2385">
                   <caret line="87" column="39" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
                   <folding>
                     <element signature="n#head#0;n#html#0;n#!!top" expanded="true" />
@@ -53,8 +53,8 @@
           <file leaf-file-name="myStyle.css" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/myStyle.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state vertical-scroll-proportion="5.09542" vertical-offset="0" max-vertical-offset="2880">
-                  <caret line="178" column="5" selection-start-line="178" selection-start-column="5" selection-end-line="178" selection-end-column="5" />
+                <state vertical-scroll-proportion="-2.4713376" vertical-offset="3954" max-vertical-offset="4425">
+                  <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
                   <folding />
                 </state>
               </provider>
@@ -67,8 +67,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/myStyle.css" />
         <option value="$PROJECT_DIR$/index.html" />
+        <option value="$PROJECT_DIR$/myStyle.css" />
       </list>
     </option>
   </component>
@@ -76,7 +76,7 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="2156" />
+    <option name="x" value="2336" />
     <option name="y" value="-127" />
     <option name="width" value="1365" />
     <option name="height" value="1160" />
@@ -225,7 +225,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="2156" y="-127" width="1365" height="1160" extended-state="0" />
+    <frame x="2336" y="-127" width="1365" height="1160" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -429,17 +429,9 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/myStyle.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="5.09542" vertical-offset="0" max-vertical-offset="2880">
-          <caret line="178" column="5" selection-start-line="178" selection-start-column="5" selection-end-line="178" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4513889" vertical-offset="1110" max-vertical-offset="2385">
+        <state vertical-scroll-proportion="0.7009346" vertical-offset="1005" max-vertical-offset="2385">
           <caret line="87" column="39" selection-start-line="87" selection-start-column="39" selection-end-line="87" selection-end-column="39" />
           <folding>
             <element signature="n#head#0;n#html#0;n#!!top" expanded="true" />
@@ -452,6 +444,14 @@
             <element signature="e#2344#4077#0" expanded="true" />
             <element signature="e#4577#8497#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/myStyle.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.4713376" vertical-offset="3954" max-vertical-offset="4425">
+          <caret line="186" column="0" selection-start-line="186" selection-start-column="0" selection-end-line="286" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>

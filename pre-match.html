@@ -115,75 +115,88 @@
                 padding-top: 1px;
             }
         }
-        @media only screen and (max-width: 320px) {
-            #background-image { 
-                width: 300px;
-                -moz-border-radius: 8px;
-                -webkit-border-radius: 8px;
-                border-radius: 8px;
-            }
-            /*
-            #german-image{ 
-                position: absolute; 
-                top: 95px;
-                left:55px;
-                width: 70px;
-            }
-            #italian-image{ 
-                position: absolute; 
-                top: 95px; 
-                left:320px; 
-                width: 70px;
-            }
-            
-            .text{ text-align: center; color: #FFFFFF; font-family: 'Open Sans', sans-serif; }
-            #title { font-size: 18px; position: absolute;  top: 15px; left: 115px; }
-            
-            #subTitle { font-size: 12px; }
-            
-            #german-text {
-                font-size: 22px;
-                position: absolute;
-                top:150px;
-                left: 45px;
-            }
-            #italian-text {
-                font-size: 22px;
-                position: absolute;
-                top:150px;
-                left: 335px;
-            }
-            #results{
-                font-size: 50px;
-                position: absolute;
-                top:85px;
-                left: 192px;
-            }
-            #button-half{
-                position: absolute;
-                top:200px;
-                left:197px;
-                background-color: #FF9600;
-                width: 75px;
-                height: 15px;
-                 -moz-border-radius: 5px;
-                -webkit-border-radius: 5px;
-                border-radius: 5px;      
-            }
-            #text-halt{
-                font-size: 9px;
-                text-align: center;
-                padding-top: 1px;
-            } */
+        @media only screen and (max-width: 450px) {
+
+        #background-image {
+            width: 304px ;
+            -moz-border-radius: 8px;
+            -webkit-border-radius: 8px;
+            border-radius: 8px;
+            height:169px;
+        }
+
+        .text{
+            text-align: center;
+            color: #FFFFFF;
+            font-family: 'Open Sans', sans-serif;
         }
             
+        .title {
+            font-size: 16px;
+            top: 8px;
+            width: 304px
+        }
+        
+        #subTitle { padding-top: 1px; font-size: 10px; }
+
+        #german-image{
+            position: absolute;
+            top: 80px;
+            left: 50px;
+            width: 40px;
+        }
+
+        #german-text {
+        font-size: 12px;
+        position: absolute;
+        top:110px;
+        left: 45px;
+    }
+
+        #italian-image{
+            position: absolute;
+            top: 80px;
+            left:230px;
+            width: 40px;
+        }
+        #italian-text {
+        font-size: 12px;
+        position: absolute;
+        top:110px;
+        left: 240px;
+        }
+
+    #results{
+        font-size: 38px;
+        position: absolute;
+        top:65px;
+        left: 135px;
+    }
+
+    #button-half{
+        position: absolute;
+        top:155px;
+        left:145px;
+        width: 50px;
+        height: 10px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    #text-halt{
+        font-size: 7px;
+        text-align: center;
+        padding-top: 1px
+    }
+}
             
         </style>
     </head>
     <body>
 
             <img id="background-image" src="image/bg-live-sketch.png">
-            <div class="text title" title="">
+            <div class="text title">
                 World Cup 2014 - Group A
                 <div id="subTitle">
                     International

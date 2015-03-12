@@ -184,3 +184,106 @@
 
 }
 
+@media (max-width: 450px) {
+
+    .background-image {
+        width: 304px ;
+        -moz-border-radius: 8px;
+        -webkit-border-radius: 8px;
+        border-radius: 8px;
+        height:169px;
+    }
+
+    .text{
+        text-align: center;
+        color: #FFFFFF;
+        font-family: 'Open Sans', sans-serif;
+
+    }
+    .title {
+        font-size: 16px;
+        position: absolute;
+        top: 8px;
+        width: 304px
+    }
+    #subTitle { padding-top: 1px; font-size: 10px; }
+
+    .home-image{
+        position: absolute;
+        top: 60px;
+        left: 35px;
+        width: 40px;
+    }
+
+    .home-text {
+        font-size: 14px;
+        position: absolute;
+        top:105px;
+        left: 25px;
+    }
+
+    .away-image{
+        position: absolute;
+        top: 60px;
+        left:215px;
+        width: 40px;
+    }
+    .away-text {
+        font-size: 14px;
+        position: absolute;
+        top:105px;
+        left: 200px;
+    }
+
+    .results{
+        font-size: 38px;
+        position: absolute;
+        top:55px;
+        left: 130px;
+    }
+
+    .button-half{
+        position: absolute;
+        top:145px;
+        left:125px;
+        width: 50px;
+        height: 10px;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+    }
+
+    .stateEnded{
+        background-color: #308517;
+    }
+
+    .statePlay{
+        background-color: #FF9600;
+    }
+
+    .stateNotStart{
+        background-color: #555555;
+    }
+
+    .text-half{
+        font-size: 7px;
+        text-align: center;
+        padding-top: 1px
+    }
+
+    .time {
+        font-size: 10px;
+        position: absolute;
+        top:63px;
+        left: 120px;
+    }
+    .timeHour {
+        font-size: 13px;
+    }
+
+    .timeDate{
+        font-size: 12px;
+    }
+
+}
+
