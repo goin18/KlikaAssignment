@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+    <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+    <script src="http://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="owl-carousel/owl.carousel.js"></script>
+    <link rel="stylesheet" href="myStyle.css">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+</head>
+    <body>
+        <div class="owl-carousel"></div>
+    <script>
+        $(document).ready(function() {
+            $("#owl-example").matchCarousel({
+                maxMatches:5
+            });
+
+        });
+
+        (function ($) {
+            $.fn.matchCarousel = function(options) {
+              var settings = $.extend({
+                  maxMatches: 10,
+                  URL: "http://lsdev.betradar.com/ls/feeds/?/betradar/en/Europe:Berlin/gismo/event_fullfeed/0/5"
+              }, options);
+
+            var displayAllMatches = [];
+            var counter = settings.maxMatches;
+            var json = $.getJSON(settings.URL, function(data){
+                $.each(data.doc, function(key,val){
+                    //console.log(val);
+                    var valObject = val;
+                    $.each(valObject.data, function(key, val){
+                        var valData = val;
+                            if (valData.name == "Soccer") {
+                                console.log(valData.realcategories);
+                                var allRealcategory = valData.realcategories;
+                                $.each(allRealcategory, function(key,val){
+                                    var realcategory = val;
+                                    var kSubTitle = realcategory.name;
+                                    var allTournaments = realcategory.tournaments;
+
+                                    $.each(allTournaments, function(key,val){
+                                        var tournament = val;
+                                        var allMatches = tournament.matches;
+                                        //  console.log(val);
+                                        var kTitle = tournament.name + " - " + val.seasontypename;
+
+                                        $.each(allMatches, function(key,val){
+                                            if (counter > 0) {
+                                                var match = val;
+                                                // console.log(match);
+                                                var kStatus = {id: match.status._id, name: match.status.name};
+                                                var kTeamHome = {uid: match.teams.home.uid, name: match.teams.home.name, abbr: match.teams.home.abbr};
+                                                var kTeamAway = {uid: match.teams.away.uid, name: match.teams.away.name, abbr: match.teams.away.abbr};
+                                                var kTime = {time: match._dt.time, date: match._dt.date};
+                                                var kResult = {home: match.result.home, away: match.result.away};
+
+                                                var dataMatch = {
+                                                    title: kTitle,
+                                                    subTitle: kSubTitle,
+                                                    status: kStatus,
+                                                    home: kTeamHome,
+                                                    away: kTeamAway,
+                                                    time: kTime,
+                                                    result: kResult
+                                                };
+                                                displayAllMatches.push(dataMatch);
+                                                counter -= 1;
+                                                console.log(counter)
+                                            }
+                                        });
+                                    });
+
+                                });
+                            }
+                        });
+                    });
+            });
+                json.complete(function(){
+                    console.log(displayAllMatches);
+
+                    var carousel = $(".owl-carousel");
+                    carousel.owlCarousel({
+                        singleItem:true
+                     });
+
+                    $.each(displayAllMatches, function(key,val){
+                        console.log(val.status.id);
+                        switch(val.status.id){
+                            case 0:
+                                carousel.data('owlCarousel').addItem("<div>" +
+                                "<img src='image/bg-prematch.jpg' class='background-image'/> " +
+                                "<div class='text title'>" + val.title +
+                                "<div id='subTitle'>"+ val.subTitle+ "</div>"+
+                                "</div>"+
+                                "<img class='home-image' src='http://ls.betradar.com/ls/crest/big/"+val.home.uid+".png'/>" +
+                                "<div class='text home-text'>"+ val.home.name + "</div>" +
+                                "<img class='away-image' src='http://ls.betradar.com/ls/crest/big/"+val.away.uid+".png'/>" +
+                                "<div class='text away-text'>"+ val.away.name + "</div>" +
+                                "<div class='text time'> VS" +
+                                    "<div class='timeHour'>"+ val.time.time +"</div>" +
+                                    "<div class='timeDate'>"+ val.time.date +"</div>" +
+                                "</div>"+
+                                "<div class='button-half stateNotStart'>"+
+                                "<div class='text text-half'>" + val.status.name + "</div>"+
+                                "</div>"+
+                                "</div>");
+                                break;
+                            case 100:
+                                carousel.data('owlCarousel').addItem("<div>" +
+                                "<img src='image/bg-postmatch.jpg' class='background-image'/> " +
+                                "<div class='text title'>" + val.title +
+                                "<div id='subTitle'>"+ val.subTitle+ "</div>"+
+                                "</div>"+
+                                "<img class='home-image' src='http://ls.betradar.com/ls/crest/big/"+val.home.uid+".png'/>" +
+                                "<div class='text home-text'>"+ val.home.name + "</div>" +
+                                "<img class='away-image' src='http://ls.betradar.com/ls/crest/big/"+val.away.uid+".png'/>" +
+                                "<div class='text away-text'>"+ val.away.name + "</div>" +
+                                "<div class='text results'>"+val.result.home+":"+val.result.away+"</div>"+
+                                "<div class='button-half stateEnded'>"+
+                                "<div class='text text-half'>" + val.status.name + "</div>"+
+                                "</div>"+
+                                "</div>");
+                                break;
+                            default :
+                                carousel.data('owlCarousel').addItem("<div>" +
+                                "<img src='image/bg-live.jpg' class='background-image'/> " +
+                                "<div class='text title'>" + val.title +
+                                "<div id='subTitle'>"+ val.subTitle+ "</div>"+
+                                "</div>"+
+                                "<img class='home-image' src='http://ls.betradar.com/ls/crest/big/"+val.home.uid+".png'/>" +
+                                "<div class='text home-text'>"+ val.home.name + "</div>" +
+                                "<img class='away-image' src='http://ls.betradar.com/ls/crest/big/"+val.away.uid+".png'/>" +
+                                "<div class='text away-text'>"+ val.away.name + "</div>" +
+                                "<div class='button-half statePlay'>"+
+                                "<div class='text text-half'>" + val.status.name + "</div>"+
+                                "</div>"+
+                                "</div>");
+                                break;
+                        }
+                    });
+                });
+            };
+
+
+        }(jQuery));
+
+    </script>
+    </body>
+</html>
